@@ -1,6 +1,7 @@
 <template>
   <base-container title="Vuex">
   <h2>{{ counter}}</h2>
+  <FavComp></FavComp>
   <button @click="clickMe">Add 10</button>
   <change-counter></change-counter>  
 </base-container>
@@ -10,15 +11,17 @@
 <script>
 import BaseContainer from './components/BaseContainer.vue';
 import changeCounter from './components/changeCounter.vue';
+import FavComp from './components/FavComp.vue';
 
 export default {
   components: {
     BaseContainer,
     changeCounter,
-  },
+    FavComp
+},
   computed:{
    counter(){
-    return this.$store.state.counter
+    return this.$store.state.counter*2
    }
   },
   methods:{
